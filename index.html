@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SeZaLab Mockup Creator</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span class="icon">🎨</span>
+                SeZaLab Mockup Creator
+            </h1>
+            <p class="subtitle">Tasarımınızı Mockup'a Yerleştirin</p>
+        </div>
+
+        <!-- Design Upload Section -->
+        <div class="section">
+            <label class="section-label">
+                <span class="icon">📤</span>
+                Tasarım Dosyası (PNG)
+            </label>
+            <input type="file" id="designInput" accept="image/png" class="file-input">
+            <p class="helper-text">PNG formatında tasarımınızı yükleyin</p>
+        </div>
+
+        <!-- Template Selection -->
+        <div class="section">
+            <label class="section-label">
+                <span class="icon">👕</span>
+                Mockup Şablonu Seç
+            </label>
+            <select id="templateSelect" class="select-input">
+                <option value="">-- Şablon Seç --</option>
+                <option value="tshirt-black">👕 T-Shirt Siyah</option>
+                <option value="tshirt-white">👕 T-Shirt Beyaz</option>
+                <option value="hoodie">🧥 Hoodie</option>
+                <option value="tote">👜 Tote Bag</option>
+                <option value="mug">☕ Kupa</option>
+            </select>
+            <p class="helper-text">R2 URL'leri config.json'da saklanır</p>
+        </div>
+
+        <!-- Canvas Section -->
+        <div class="section">
+            <label class="section-label">Canvas - Tasarımınız Burada Gösterilecek</label>
+            <div class="canvas-wrapper">
+                <canvas id="mockupCanvas" width="500" height="600"></canvas>
+            </div>
+            <p class="helper-text">Tasarımı sürükleyin, boyutlandırın, konumlandırın</p>
+        </div>
+
+        <!-- Position Controls -->
+        <div id="positioningControls" class="section controls-hidden">
+            <label class="section-label">
+                <span class="icon">🎯</span>
+                Tasarım Konumu ve Boyutu
+            </label>
+
+            <div class="control-row">
+                <label>X Pozisyon (piksel)</label>
+                <input type="range" id="posX" min="0" max="500" value="100" class="slider">
+                <span id="posXValue" class="value-display">100</span>px
+            </div>
+
+            <div class="control-row">
+                <label>Y Pozisyon (piksel)</label>
+                <input type="range" id="posY" min="0" max="600" value="150" class="slider">
+                <span id="posYValue" class="value-display">150</span>px
+            </div>
+
+            <div class="control-row">
+                <label>Genişlik (piksel)</label>
+                <input type="range" id="designWidth" min="50" max="400" value="200" class="slider">
+                <span id="widthValue" class="value-display">200</span>px
+            </div>
+
+            <div class="control-row">
+                <label>Yükseklik (piksel)</label>
+                <input type="range" id="designHeight" min="50" max="400" value="200" class="slider">
+                <span id="heightValue" class="value-display">200</span>px
+            </div>
+
+            <div class="control-row">
+                <label>Saydamlık (%)</label>
+                <input type="range" id="opacity" min="0" max="100" value="100" class="slider">
+                <span id="opacityValue" class="value-display">100</span>%
+            </div>
+
+            <div class="control-row">
+                <label>Dönüş (Derece)</label>
+                <input type="range" id="rotation" min="0" max="360" value="0" class="slider">
+                <span id="rotationValue" class="value-display">0</span>°
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+            <button id="downloadBtn" class="btn btn-primary" disabled>
+                <span class="icon">⬇️</span>
+                Mockup İndir (PNG)
+            </button>
+            <button id="resetBtn" class="btn btn-secondary">
+                <span class="icon">↺</span>
+                Sıfırla
+            </button>
+        </div>
+
+        <!-- Preview Info -->
+        <div id="previewInfo" class="info-box info-hidden">
+            <span class="icon">ℹ️</span>
+            <span id="previewText"></span>
+        </div>
+
+        <!-- Status Info -->
+        <div id="statusBox" class="status-box"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

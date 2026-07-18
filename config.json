@@ -1,0 +1,27 @@
+{
+  "app": {
+    "name": "SeZaLab Mockup Creator",
+    "version": "1.0.0",
+    "description": "Tasarımlarını mockup şablonlarına yerleştiren uygulama"
+  },
+  "mockups": {
+    "tshirt-black": "https://your-r2-bucket.r2.dev/mockups/tshirt-black.png",
+    "tshirt-white": "https://your-r2-bucket.r2.dev/mockups/tshirt-white.png",
+    "hoodie": "https://your-r2-bucket.r2.dev/mockups/hoodie.png",
+    "tote": "https://your-r2-bucket.r2.dev/mockups/tote-bag.png",
+    "mug": "https://your-r2-bucket.r2.dev/mockups/mug.png"
+  },
+  "canvas": {
+    "defaultWidth": 500,
+    "defaultHeight": 600,
+    "minWidth": 300,
+    "minHeight": 400
+  },
+  "design": {
+    "minOpacity": 0,
+    "maxOpacity": 100,
+    "minSize": 50,
+    "maxSize": 600,
+    "supportedFormats": ["image/png"]
+  }
+}
