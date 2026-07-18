@@ -1,1 +1,6 @@
-
+{
+  "name": "sezalab-mockup-creator",
+  "version": 2,
+  "buildCommand": "",
+  "outputDirectory": "."
+}
